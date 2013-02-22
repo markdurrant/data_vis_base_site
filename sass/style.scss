@@ -1,0 +1,128 @@
+//===============================================================================
+// VARIABLES
+//===============================================================================
+$hue: 30;
+
+$body-font: hsl($hue, 20, 20);
+$body-bg: hsl($hue, 100, 98);
+$link: hsl($hue, 100, 35);
+$header: hsl($hue, 100, 75);
+$selection: hsl($hue, 100, 85);
+$code-block: hsl($hue, 20, 20);
+$border: hsl($hue, 20, 80);
+$button: hsl($hue, 80, 40);
+$footer: hsl($hue, 100, 80);
+
+//===============================================================================
+// IMPORTS
+//===============================================================================
+@import "compass/css3";
+@import "_normalize.scss";
+@import "_type.scss";
+
+//===============================================================================
+// MIXINS
+//===============================================================================
+
+//===============================================================================
+// HELPER-CLASSES
+//===============================================================================
+
+//===============================================================================
+// GLOBAL-STYLES
+//===============================================================================
+// apply box sizing & webkit font smoothing everywhere
+*{
+  @include box-sizing(border-box);
+  -webkit-font-smoothing: antialiased;
+  
+  &::selection {
+    background: $selection;
+    }
+    
+  &::-moz-selection {
+    background: $selection;
+  }
+}
+
+%body{
+  background: $body-bg;
+}
+
+.wrap,
+.child-wrap{
+  width: 40em;
+  margin: 0 auto;
+}
+
+.wrap{
+  margin-bottom: 12em;
+}
+
+//===============================================================================
+// STYLES
+//===============================================================================
+
+.page-header{
+  text-align: center;
+  background: $header;
+  margin-bottom: 3em;
+  padding: 1em 0;
+
+  h1{
+    color: darken($body-font, 5);
+  }
+
+  h2{
+    font-size: 1.25em;
+    margin-top: .25em;
+    font-style: italic;
+  }
+}
+
+.vis-container{
+  border: 1px solid $border;
+  padding: .5em;
+  margin-bottom: 1em;
+  @include border-radius(.2em);
+}
+
+.vis-description{
+  border-top: 1px solid $border;
+  margin-top: .5em;
+  padding-top: .5em;
+
+  p{
+    margin-bottom: 0;
+    font-style: italic;
+    font-size: .8em;
+    text-align: center;
+  }
+}
+
+button,
+.button{
+  background: $button;
+  border: 0;
+  padding: .5em .75em .4em;
+  font-weight: bold;
+  color: $body-bg;
+
+  @include border-radius(.2em);
+
+  &:hover{
+    background: darken($button, 5);
+  }
+}
+
+.page_footer{
+  background: $footer;
+  padding: .5em;
+  font-size: .8em;
+  text-align: center;
+  color: lighten($body-font, 30);
+
+  p{
+    margin: 0;
+  }
+}
