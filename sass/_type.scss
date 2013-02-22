@@ -4,17 +4,19 @@
 body{
   @extend %body;
 
-  font-size: 1.1em;
-  line-height: 1.4;
   color: $body-font;
+  font-size: 1.1em;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
 }
 
 h1,
 h2,
 h3,
 h4,
-p{
+p,
+ul,
+ol{
   margin-top: 0;
 }
 
@@ -22,21 +24,19 @@ h1,
 h2,
 h3,
 h4{
-  line-height: 1.2;
+  margin-bottom: .5em;
   color: lighten($body-font, 5);
-  font-family: 'Signika', sans-serif;
   font-weight: 700;
+  font-family: 'Signika', sans-serif;
+  line-height: 1.2;
 }
 
 h1{
   font-size: 3.25em;
-  margin-bottom: 0;
-  letter-spacing: -1px;
 }
 
 h2{
   font-size: 1.75em;
-  margin: 1.5em 0 .2em;
 }
 
 h3{
@@ -45,26 +45,71 @@ h3{
 
 p{
   margin-bottom: .6em;
+
+  code{
+    padding: .1em .3em .15em;
+    border: 1px solid darken($body-bg, 15);
+    background: darken($body-bg, 5);
+    
+    @include border-radius(.2em);
+  }
 }
 
 a{
   color: $link;
   font-weight: bold;
+
+  @include transition-property(color);
+  @include transition-duration(.2s);
+
+  &:hover{
+    color: darken($link,15);
+  }
+}
+
+ul{
+  padding: 0 0 0 2em;
+}
+
+ol{
+  padding: 0 0 0 2.25em; 
+}
+
+blockquote{
+  margin: 0 0 1em 0;
+}
+
+blockquote p{
+  padding: 0 1.5em;
+  font-style: italic;
+
+  &:before,
+  &:after{
+    content: '"';
+  }
+
+  &:before{
+    margin-left: -.3em;
+  }
 }
 
 code{
-  background-color: darken($body-bg, 5);
   font-weight: bold;
-  padding: .05em .3em .1em;
-  border: 1px solid darken($body-bg, 12.5);
+}
+
+pre{
+  padding: .5em .75em;
+  background-color: $code-block;
+  color: white;
 
   @include border-radius(.2em);
 }
 
-pre{
-  background-color: $code-block;
-  color: white;
-  padding: .5em .75em;
+hr{
+  margin: 2em 0;
+  height: .25em;
+  border: 0;
+  background: darken($body-bg, 30);
 
-  @include border-radius(.2em);
+  @include border-radius(1em);
 }

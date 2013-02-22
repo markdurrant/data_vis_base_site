@@ -1,0 +1,25 @@
+//===============================================================================
+// BUTTONS
+//===============================================================================
+button,
+.button{
+  padding: .25em .5em;
+  border: 0;
+  border: .15em solid $button;
+  background: $button;
+  color: $body-bg;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  @include border-radius(.2em);
+
+  &:hover{
+    border-color: darken($button, 10);
+    background: darken($button, 5);
+  }
+
+  &:active{
+    background: darken($button, 10);
+  }
+}

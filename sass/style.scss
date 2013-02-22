@@ -1,16 +1,26 @@
 //===============================================================================
 // VARIABLES
 //===============================================================================
-$hue: 30;
+// Used to genrate default colors 
+$hue: 15;
 
+// Body copy text color
 $body-font: hsl($hue, 20, 20);
-$body-bg: hsl($hue, 100, 98);
-$link: hsl($hue, 100, 35);
+// Page background color
+$body-bg: hsl($hue, 100, 98.5);
+// Link text color
+$link: hsl($hue, 100, 50);
+// Page header background color
 $header: hsl($hue, 100, 75);
+// Page text selection color
 $selection: hsl($hue, 100, 85);
+// Code block background color
 $code-block: hsl($hue, 20, 20);
+// Example border color
 $border: hsl($hue, 20, 80);
-$button: hsl($hue, 80, 40);
+// Button color
+$button: hsl($hue, 100, 50);
+// Footer background color
 $footer: hsl($hue, 100, 80);
 
 //===============================================================================
@@ -19,6 +29,10 @@ $footer: hsl($hue, 100, 80);
 @import "compass/css3";
 @import "_normalize.scss";
 @import "_type.scss";
+@import "_header.scss";
+@import "_button.scss";
+@import "_vis.scss";
+@import "_footer.scss";
 
 //===============================================================================
 // MIXINS
@@ -27,14 +41,24 @@ $footer: hsl($hue, 100, 80);
 //===============================================================================
 // HELPER-CLASSES
 //===============================================================================
+.hide{
+  display: none;
+}
+
+.no-list{
+
+}
+
+.clearfix{
+  // to-do
+}
 
 //===============================================================================
 // GLOBAL-STYLES
 //===============================================================================
-// apply box sizing & webkit font smoothing everywhere
+// apply box sizing everywhere
 *{
   @include box-sizing(border-box);
-  -webkit-font-smoothing: antialiased;
   
   &::selection {
     background: $selection;
@@ -45,6 +69,7 @@ $footer: hsl($hue, 100, 80);
   }
 }
 
+// Placeholder class. Extended in _type.scss 
 %body{
   background: $body-bg;
 }
@@ -62,67 +87,3 @@ $footer: hsl($hue, 100, 80);
 //===============================================================================
 // STYLES
 //===============================================================================
-
-.page-header{
-  text-align: center;
-  background: $header;
-  margin-bottom: 3em;
-  padding: 1em 0;
-
-  h1{
-    color: darken($body-font, 5);
-  }
-
-  h2{
-    font-size: 1.25em;
-    margin-top: .25em;
-    font-style: italic;
-  }
-}
-
-.vis-container{
-  border: 1px solid $border;
-  padding: .5em;
-  margin-bottom: 1em;
-  @include border-radius(.2em);
-}
-
-.vis-description{
-  border-top: 1px solid $border;
-  margin-top: .5em;
-  padding-top: .5em;
-
-  p{
-    margin-bottom: 0;
-    font-style: italic;
-    font-size: .8em;
-    text-align: center;
-  }
-}
-
-button,
-.button{
-  background: $button;
-  border: 0;
-  padding: .5em .75em .4em;
-  font-weight: bold;
-  color: $body-bg;
-
-  @include border-radius(.2em);
-
-  &:hover{
-    background: darken($button, 5);
-  }
-}
-
-.page_footer{
-  background: $footer;
-  padding: .5em;
-  font-size: .8em;
-  text-align: center;
-  color: lighten($body-font, 30);
-
-  p{
-    margin: 0;
-  }
-}

@@ -1,0 +1,28 @@
+//===============================================================================
+// HEADER
+//===============================================================================
+.page-header{
+  margin-bottom: 3em;
+  padding: 1em 0;
+  background: $header;
+  text-align: center;
+
+  h1{
+    color: darken($body-font, 5);
+  }
+
+  h2{
+    margin-top: .25em;
+    color: darken($header, 40);
+    font-style: italic;
+    font-size: 1.25em;
+  }
+
+  a{
+    color: darken($header, 55);
+
+    &:hover{
+      color: darken($header, 100);
+    }
+  }
+}
