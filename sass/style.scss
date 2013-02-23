@@ -2,26 +2,26 @@
 // VARIABLES
 //===============================================================================
 // Used to genrate default colors 
-$hue: 15;
+$hue:20;
 
 // Body copy text color
 $body-font: hsl($hue, 20, 20);
 // Page background color
-$body-bg: hsl($hue, 100, 98.5);
+$body-bg: hsl($hue, 20, 98.5);
 // Link text color
-$link: hsl($hue, 100, 50);
+$link: hsl($hue, 20, 50);
 // Page header background color
-$header: hsl($hue, 100, 75);
+$header: hsl($hue, 20, 75);
 // Page text selection color
-$selection: hsl($hue, 100, 85);
+$selection: hsl($hue, 20, 85);
 // Code block background color
 $code-block: hsl($hue, 20, 20);
 // Example border color
 $border: hsl($hue, 20, 80);
 // Button color
-$button: hsl($hue, 100, 50);
+$button: hsl($hue, 20, 50);
 // Footer background color
-$footer: hsl($hue, 100, 80);
+$footer: hsl($hue, 20, 80);
 
 //===============================================================================
 // IMPORTS
